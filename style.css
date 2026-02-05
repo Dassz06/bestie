@@ -1,0 +1,261 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fce4ec;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* Prevent side-scrolling */
+}
+
+#main-card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 90%; /* For mobile friendliness */
+}
+h1 {
+    color: #d81b60;
+    margin-bottom: 40px;
+}
+
+/* This fixes the overlapping issue */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Space between buttons */
+    position: relative;
+    height: 70px;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+}
+
+#yesBtn {
+    background-color: #28a745; /* Green */
+}
+
+#noBtn {
+    background-color: #dc3545; /* Red */
+}
+
+/* Success screen styling */
+#success {
+    display: none;
+}
+
+.bestie-photo {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Heart Rain */
+.heart {
+    position: fixed; /* Stays relative to the screen */
+    top: -20px;
+    font-size: 20px;
+    color: #ff4081;
+    user-select: none;
+    pointer-events: none; /* So you can still click the images */
+    z-index: 9999; /* Higher than everything else */
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#photo-gallery {
+    overflow: hidden; /* Prevents hearts from creating a side-scroll bar */
+}
+
+/* Full screen gallery styling */
+#photo-gallery {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fce4ec;
+    text-align: center;
+    padding-top: 100px; /* Space for the title */
+    padding-bottom: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* The Grid for your photos */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* Music Control Button */
+#music-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3000;
+}
+
+#musicBtn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #d81b60;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+/* IMAGE POPUP ANIMATION */
+.memory-img {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border: 8px solid white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Makes it "bounce" */
+}
+
+/* When you hover or touch the image */
+.memory-img:hover {
+    transform: scale(1.1) rotate(3deg); /* Grows and tilts slightly */
+    box-shadow: 0 15px 30px rgba(216, 27, 96, 0.3); /* Adds a pink glow */
+    z-index: 10;
+    border-color: #f8bbd0;
+}
+
+
+.back-btn {
+    background-color: #757575;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* THE COOL VIEW BUTTON */
+#nextBtn {
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); /* Cool Purple to Blue Gradient */
+    color: white;
+    margin-top: 25px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px; /* Rounded pill shape */
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(37, 117, 252, 0.3); /* Soft blue glow */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#nextBtn:hover {
+    transform: translateY(-5px) scale(1.05); /* Jumps up slightly */
+    box-shadow: 0 15px 30px rgba(106, 17, 203, 0.4); /* Stronger glow on hover */
+    background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%); /* Flips gradient */
+}
+
+#nextBtn:active {
+    transform: translateY(0); /* Returns to normal when clicked */
+}
+/* Message Page Background and Layout */
+#message-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fce4ec;
+    display: none; /* Hidden until button is clicked */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2100;
+}
+
+/* Elegant Message Card */
+#message-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fce4ec;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2100;
+    padding: 40px 20px;
+}
+
+.message-card {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(216, 27, 96, 0.2);
+    max-width: 600px;
+    width: 95%;
+    text-align: center;
+    border-top: 10px solid #ff4081;
+}
+
+.personal-note {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    text-align: left; /* Better for long messages */
+    margin-bottom: 30px;
+}
+
+.msg-btn {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s ease;
+}
+
+
+.msg-btn:hover {
+    transform: scale(1.1);
+    background-color: #d81b60;
+}
