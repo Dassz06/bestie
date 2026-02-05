@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main-card">
+        <div id="question-section">
+            <h1>Will you be my bestie forever? ✨</h1>
+            <div class="btn-container">
+                <button id="yesBtn" onclick="celebrate()">YES</button>
+                <button id="noBtn" onmouseover="moveButton()">NO</button>
+            </div>
+        </div>
+
+        <div id="success" style="display:none;">
+            <h1>YAY! Besties for life! 💖</h1>
+            <img src="bestie.png" class="bestie-photo">
+            <p>You made the right choice! 😂</p>
+            <button id="nextBtn" onclick="showGallery()">View Our Memories 📸</button>
+        </div>
+    </div>
+
+    <div id="photo-gallery" style="display:none;">
+    <div id="music-container">
+        <button id="musicBtn" onclick="toggleMusic()">🔊 Unmute</button>
+        <audio id="bgMusic" loop>
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <h1>Our Best Memories 🌟</h1>
+    
+    <div class="gallery-grid">
+        <img src="image1.png" class="memory-img">
+        <img src="image2.png" class="memory-img">
+        <img src="image3.png" class="memory-img">
+        <img src="image4.png" class="memory-img">
+        <img src="image5.png" class="memory-img">
+        <img src="image6.png" class="memory-img">
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px; padding-bottom: 50px;">
+        <button class="back-btn" onclick="location.reload()">Back to Start</button>
+        <button class="msg-btn" onclick="showMessagePage()">Read My Note ✍️</button>
+    </div>
+</div>
+
+<div id="message-page" style="display:none;">
+    <div class="message-card">
+        <h1>To My Favorite Human 🥜💖</h1>
+        <div class="personal-note">
+            You are honestly the best person I have ever met in my life. My safest place, my forever crazy nut, and the only human who knows all my secrets and still stays 🥜😂
+            <br><br>
+            From our random talks, late-night nonsense, and those “we will never talk about this again” moments… you are my favorite story. I advised you about relationships like I was a certified love guru, and look at us now… end of the story, both of us single and acting strong 😌
+            <br><br>
+            This Valentine’s Day, it’s just you and me. Two single legends, eating, laughing, and judging couples like we don’t care at all 🤣
+            <br><br>
+            At one point, I really thought we would be single forever and never find a good one. But no no no… I can’t advise you to stay single for the rest of your life. One day you will find someone amazing. And remember, I need full details, screenshots, voice notes, and I must approve first 😏
+            <br><br>
+            Until that day, it’s us. My person. My partner in crime. My emergency contact for everything.
+            <br><br>
+            No matter who comes into our lives, you will always be special to me. Thank you for choosing me every day, for loving me in your own way, and for being my best friend. 
+            <br><br>
+            <strong>I love you, always 🤍✨</strong>
+        </div>
+        <button class="back-btn" onclick="showGalleryFromMsg()">Back to Photos 📸</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
